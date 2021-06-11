@@ -1,0 +1,13 @@
+name: SneakTNT
+description: TNT Spawns when you sneak I guess
+version: 0.0.1
+main: net.jimthescientist.sneaktnt.SneakTNT
+commands:
+  start:
+    description: start the plugin
+    usage: /<command>
+    permission: sneaktnt.start
+  reset:
+    description: restart the plugin
+    usage: /<command>
+    permission: sneaktnt.restart
