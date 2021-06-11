@@ -12,20 +12,20 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class SneakTNT extends JavaPlugin {
     public static boolean playing = false;
     public void onEnable() {
-        Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "[BlockBreakHealth]: Enabled");
+        Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "[SneakTNT]: Enabled");
         getServer().getPluginManager().registerEvents(new SneakEvent(), this);
         this.getCommand("start").setExecutor(new Start());
         this.getCommand("reset").setExecutor(new Reset());
     }
     public void onDisable(){
-        Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.BLUE + "[BlockBreakHealth]: Disabled");
+        Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.BLUE + "[SneakTNT]: Disabled");
     }
     public static void pluginDebugInfo(String debugInfo, CommandSender sender) {
         if (sender == null) {
-            Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.DARK_RED + " " + ChatColor.BOLD + "BlockBreakHealth: " + ChatColor.RESET + " " + ChatColor.YELLOW + debugInfo);
+            Bukkit.getServer().getConsoleSender().sendMessage(ChatColor.DARK_RED + " " + ChatColor.BOLD + "SneakTNT: " + ChatColor.RESET + " " + ChatColor.YELLOW + debugInfo);
         } else {
             Player player = (Player) sender;
-            player.sendMessage(ChatColor.DARK_RED + " " + ChatColor.BOLD + "BlockBreakHealth: " + ChatColor.RESET + " " + ChatColor.YELLOW + debugInfo);
+            player.sendMessage(ChatColor.DARK_RED + " " + ChatColor.BOLD + "SneakTNT: " + ChatColor.RESET + " " + ChatColor.YELLOW + debugInfo);
         }
     }
 }
