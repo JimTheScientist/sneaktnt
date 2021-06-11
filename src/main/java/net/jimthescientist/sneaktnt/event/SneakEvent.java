@@ -15,11 +15,14 @@ public class SneakEvent implements Listener {
     @EventHandler
     public static void onSneak(PlayerToggleSneakEvent event){
         if (SneakTNT.playing == true){
-            Location playerLocation = event.getPlayer().getLocation();
-            World world = event.getPlayer().getWorld();
-            //world.createExplosion(playerLocation, 5);
-            @NotNull TNTPrimed tnt = event.getPlayer().getWorld().spawn(event.getPlayer().getTargetBlock(null, 50).getLocation().add(0, 1, 0), TNTPrimed.class);
-            ((TNTPrimed)tnt).setFuseTicks(40);
+            if (event.isSneaking() == true){
+                Location playerLocation = event.getPlayer().getLocation();
+                World world = event.getPlayer().getWorld();
+                //world.createExplosion(playerLocation, 5);
+                @NotNull TNTPrimed tnt = event.getPlayer().getWorld().spawn(event.getPlayer().getTargetBlock(null, 50).getLocation().add(0, 1, 0), TNTPrimed.class);
+                ((TNTPrimed)tnt).setFuseTicks(40);
+            }
+
         }
     }
 }
